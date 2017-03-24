@@ -1,0 +1,140 @@
+create extension rusmorph;
+set client_encoding to 'utf-8';
+select ts_lexize('rusmorph', 'слушать');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушаю');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушаюсь');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушаясь');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушаемся');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушается');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушалось');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушались');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушалась');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушаешься');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушаетесь');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушаются');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушался');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'слушавший');
+ ts_lexize 
+-----------
+ {слушать}
+(1 row)
+
+select ts_lexize('rusmorph', 'чудо');
+ ts_lexize 
+-----------
+ {чудо}
+(1 row)
+
+select ts_lexize('rusmorph', 'чудес');
+   ts_lexize   
+---------------
+ {чудеса,чудо}
+(1 row)
+
+select ts_lexize('rusmorph', 'чудеса');
+   ts_lexize   
+---------------
+ {чудеса,чудо}
+(1 row)
+
+select ts_lexize('rusmorph', 'чудесам');
+   ts_lexize   
+---------------
+ {чудеса,чудо}
+(1 row)
+
+select ts_lexize('rusmorph', 'Чудо');
+ ts_lexize 
+-----------
+ {чудо}
+(1 row)
+
+select ts_lexize('rusmorph', 'Лебедев');
+ ts_lexize 
+-----------
+ {Лебедев}
+(1 row)
+
+select ts_lexize('rusmorph', 'лебедев');
+ ts_lexize 
+-----------
+ {Лебедев}
+(1 row)
+
+select ts_lexize('rusmorph', 'Лебедева');
+ ts_lexize 
+-----------
+ {Лебедев}
+(1 row)
+
+select ts_lexize('rusmorph', 'лебедева');
+ ts_lexize 
+-----------
+ {Лебедев}
+(1 row)
+

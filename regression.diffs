@@ -1,0 +1,23 @@
+*** /home/knizhnik/postgresql.9_5_stable/contrib/rusmorph/expected/rusmorph.out	2017-03-23 10:50:44.535189768 +0300
+--- /home/knizhnik/postgresql.9_5_stable/contrib/rusmorph/results/rusmorph.out	2017-03-23 12:01:07.731296122 +0300
+***************
+*** 138,152 ****
+   {Лебедев}
+  (1 row)
+  
+- select ts_lexize('rusmorph', 'лебедянский');
+-   ts_lexize  
+- -------------
+-  {лебедянск}
+- (1 row)
+- 
+- select ts_lexize('rusmorph', 'Лебедянский');
+-   ts_lexize  
+- -------------
+-  {лебедянск}
+- (1 row)
+- 
+--- 138,140 ----
+
+======================================================================
+

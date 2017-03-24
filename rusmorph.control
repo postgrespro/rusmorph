@@ -1,0 +1,5 @@
+# rusmorph extension
+comment = 'Morphologycal analysers/taggers for Russia'
+default_version = '1.0'
+module_pathname = '$libdir/rusmorph'
+relocatable = true

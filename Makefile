@@ -11,7 +11,7 @@ REGRESS = rusmorph
 
 CUSTOM_COPT = -Iinclude 
 
-CXXFLAGS = -Wall -g -O0 -fpic -std=c++11 -Ilibdict
+CXXFLAGS = -Wall -g -O2 -fpic -std=c++11 -Ilibdict
 
 ifdef USE_PGXS
 PG_CONFIG = pg_config

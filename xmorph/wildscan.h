@@ -107,8 +107,10 @@ namespace LIBMORPH_NAMESPACE
       }
     }
       else
-    while ( ncount-- > 0 )
-      thedic += getserial( ++thedic );
+    while ( ncount-- > 0 ) {
+	  thedic += 1;
+      thedic += getserial( thedic );
+    }
 
   /*
     если есть список лексем, провести там отождествление
@@ -169,7 +171,7 @@ namespace LIBMORPH_NAMESPACE
   public:     // operators
     void  operator () ( word16_t grinfo, byte_t bflags )
       {
-        assert( pforms - aforms <= sizeof(aforms) );
+		  assert( (size_t)(pforms - aforms) <= sizeof(aforms) );
 
         *pforms++ = MapWordInfo( (byte_t)stinfo.wdinfo, grinfo, bflags );
       }
@@ -383,9 +385,10 @@ namespace LIBMORPH_NAMESPACE
       }
     }
       else
-    while ( ncount-- > 0 )
-      fttree += getserial( ++fttree );
-
+    while ( ncount-- > 0 ) {
+	  fttree += 1;
+      fttree += getserial( fttree );
+	}
     if ( (bflags & 0x80) != 0 && GetPostMatch( thestr, cchstr, maargs.szpost, maargs.ccpost ) )
     {
       int   nforms = getserial( fttree );

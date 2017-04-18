@@ -256,8 +256,6 @@ namespace LIBMORPH_NAMESPACE
       if ( (ofsptr = LinearScanDict<word16_t, const byte_t*>( getofs, lidstree, lidkey, lexkeylen( lidkey, lexkey ) )) != nullptr )
       {
         const byte_t* dicpos = stemtree + getserial( ofsptr );
-        byte_t        clower = *dicpos++;
-        byte_t        cupper = *dicpos++;
         lexeme_t        nlexid = getserial( dicpos );
         word16_t        oclass = getword16( dicpos );
         steminfo        stinfo;

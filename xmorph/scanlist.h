@@ -67,7 +67,7 @@ namespace LIBMORPH_NAMESPACE
           const byte_t* szpost;
           size_t        ccflex = cchstr;
           stemcheck     stinfo;
-          int           rescmp;
+          int           rescmp = 0;
           int           nforms;
           int           nerror;
 

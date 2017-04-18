@@ -12,24 +12,40 @@ PG_FUNCTION_INFO_V1(rusmorph_lexize);
 
 size_t client2win(char* dst, size_t dst_size, char const* src, size_t src_size)
 {
-	char* cnv = (char*)pg_do_encoding_conversion((unsigned char*)src, src_size, pg_get_client_encoding(), PG_WIN1251);
-	strncpy(dst, cnv, dst_size);
-	if (cnv == src && src_size < dst_size) { 
-		dst[src_size] = '\0';
-		return src_size;
+    PG_TRY();
+    {    	
+		char* cnv = (char*)pg_do_encoding_conversion((unsigned char*)src, src_size, pg_get_client_encoding(), PG_WIN1251);
+		strncpy(dst, cnv, dst_size);
+		if (cnv == src && src_size < dst_size) { 
+			dst[src_size] = '\0';
+			return src_size;
+		}
+		return strlen(dst);
 	}
-	return strlen(dst);
+	PG_CATCH();
+    {
+		return (size_t)-1;
+	}
+    PG_END_TRY();
 }
 
 size_t win2client(char* dst, size_t dst_size, char const* src, size_t src_size)
 {
-	char* cnv = (char*)pg_do_encoding_conversion((unsigned char*)src, src_size, PG_WIN1251, pg_get_client_encoding());
-	strncpy(dst, cnv, dst_size);
-	if (cnv == src && src_size < dst_size) { 
-		dst[src_size] = '\0';
-		return src_size;
+    PG_TRY();
+    {    	
+		char* cnv = (char*)pg_do_encoding_conversion((unsigned char*)src, src_size, PG_WIN1251, pg_get_client_encoding());
+		strncpy(dst, cnv, dst_size);
+		if (cnv == src && src_size < dst_size) { 
+			dst[src_size] = '\0';
+			return src_size;
+		}
+		return strlen(dst);
 	}
-	return strlen(dst);
+	PG_CATCH();
+    {
+		return (size_t)-1;
+	}
+    PG_END_TRY();
 }
 
 Datum
